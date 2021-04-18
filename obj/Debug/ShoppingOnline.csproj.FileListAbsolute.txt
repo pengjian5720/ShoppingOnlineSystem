@@ -1,0 +1,2 @@
+E:\ASP.NETproject\ShoppingOnline\obj\Debug\ShoppingOnline.csprojAssemblyReference.cache
+E:\ASP.NETproject\ShoppingOnline\obj\Debug\ShoppingOnline.csproj.CoreCompileInputs.cache
