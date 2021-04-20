@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="~/SClear.aspx.cs" Inherits="ShoppingOnlie.Single" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"  CodeBehind="~/Signle.aspx.cs" CodeFile="~/Signle.aspx.cs" Inherits="ShoppingOnline.Signle" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Single</title>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="Check.aspx.cs" Inherits="Shopping.Check"%>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"  CodeFile="~/Check.aspx.cs" Inherits="ShoppingOnline.Check"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>购物车</title>

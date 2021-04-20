@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ShoppingOnline.App_Code;
+using System;
 using System.Data;
 using System.Data.OleDb;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace ShoppingOnline
 {
     public partial class UserLogin : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,11 +22,11 @@ namespace ShoppingOnline
             }
 
             string checksql = "select * from Db_User where userName=@username and userpassWord=@password";
-            OleDbParameter[] paras = {
-                                    new OleDbParameter("@username", txtName.Text),
-                                    new OleDbParameter("@password",CommonHelper.GetMD5(txtPassword.Text+CommonHelper.GetPawSalt()))
+            SqlParameter[] paras = {
+                                    new SqlParameter("@username", txtName.Text),
+                                    new SqlParameter("@password",txtPassword.Text)
                                  };
-            DataTable dt = OleDbHelper.GetDataTable(checksql, paras);
+            DataTable dt =SqlHelper.ExecDataSet(checksql,paras).Tables[0];
             if (dt.Rows.Count > 0)
             {
                 Session["usname"] = dt.Rows[0]["userName"].ToString();

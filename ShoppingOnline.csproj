@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNetPager, Version=7.0.2.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AspNetPager.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -610,7 +614,6 @@
     <Content Include="mp3\dingdong.mp3" />
     <Content Include="mp3\news.mp3" />
     <Content Include="mp3\Reset.mp3" />
-    <Content Include="Order.aspx" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csc.exe" />
@@ -735,16 +738,17 @@
     <Compile Include="Admin\UserList.aspx.designer.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\AjaxSystem.cs" />
-    <Compile Include="App_Code\cAdmin.cs">
+    <Compile Include="Code\AjaxSystem.cs" />
+    <Compile Include="Code\cAdmin.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="App_Code\cMain.cs">
+    <Compile Include="Code\cMain.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="App_Code\CommonHelper.cs" />
-    <Compile Include="App_Code\ImageFree.cs" />
-    <Compile Include="App_Code\OleDbhelper.cs" />
+    <Compile Include="Code\CommonHelper.cs" />
+    <Compile Include="Code\ImageFree.cs" />
+    <Compile Include="Code\OleDbhelper.cs" />
+    <Compile Include="Code\SqlHelper.cs" />
     <Compile Include="Change.aspx.cs">
       <DependentUpon>Change.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -774,13 +778,6 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
-    <Compile Include="Order.aspx.cs">
-      <DependentUpon>Order.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Order.aspx.designer.cs">
-      <DependentUpon>Order.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -841,7 +838,9 @@
     <Content Include="fonts\Philosopher-Regular.ttf" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\ShoppingOnline.csprojAssemblyReference.cache" />
-    <Content Include="bin\AspNetPager.dll.refresh" />
+    <Content Include="bin\AspNetPager.dll.refresh">
+      <BrowseToURL>~/bin/AspNetPager.dll</BrowseToURL>
+    </Content>
     <None Include="packages.config" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\.signature.p7s" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props" />
@@ -886,6 +885,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>

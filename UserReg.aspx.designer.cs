@@ -7,98 +7,101 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-
-
-public partial class userReg
+namespace ShoppingOnline
 {
 
-    /// <summary>
-    /// txtName 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtName;
 
-    /// <summary>
-    /// txtMobile 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtMobile;
+    public partial class UserReg
+    {
 
-    /// <summary>
-    /// txtEmail 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        /// <summary>
+        /// txtName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtName;
 
-    /// <summary>
-    /// rbtnMan 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.RadioButton rbtnMan;
+        /// <summary>
+        /// txtMobile 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMobile;
 
-    /// <summary>
-    /// rbtnWoman 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.RadioButton rbtnWoman;
+        /// <summary>
+        /// txtEmail 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
-    /// <summary>
-    /// txtPassword 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        /// <summary>
+        /// rbtnMan 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbtnMan;
 
-    /// <summary>
-    /// txtRePassword 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtRePassword;
+        /// <summary>
+        /// rbtnWoman 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbtnWoman;
 
-    /// <summary>
-    /// txtAdress 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtAdress;
+        /// <summary>
+        /// txtPassword 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
-    /// <summary>
-    /// btnReg 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btnReg;
+        /// <summary>
+        /// txtRePassword 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRePassword;
 
-    /// <summary>
-    /// btnClear 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btnClear;
+        /// <summary>
+        /// txtAdress 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAdress;
+
+        /// <summary>
+        /// btnReg 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReg;
+
+        /// <summary>
+        /// btnClear 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClear;
+    }
 }

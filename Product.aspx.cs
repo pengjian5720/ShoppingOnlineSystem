@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ShoppingOnline.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -86,7 +88,7 @@ namespace ShoppingOnline
                         strsql = "select * from Db_Prodouct order by ID desc";
 
                     DataTable dt = new DataTable();
-                    dt = OleDbHelper.GetDataTable(strsql);
+                    dt = SqlHelper.ExecDataSet(strsql).Tables[0];
                     GetRptBind(dt);
                 }
                 else if (Request.QueryString["query"] != null)
@@ -98,9 +100,9 @@ namespace ShoppingOnline
                     state[2] = "grid";
                     state[3] = "active";
                     string strquery = "select * from Db_Prodouct where pTitle like '%'+@title+'%' order by ID desc";
-                    OleDbParameter para = new OleDbParameter("@title", query);
+                    SqlParameter para = new SqlParameter("@title", query);
                     DataTable dt = new DataTable();
-                    dt = OleDbHelper.GetDataTable(strquery, para);
+                    dt = SqlHelper.ExecDataSet(strquery, para).Tables[0];
                     GetRptBind(dt);
                 }
                 else
@@ -122,7 +124,7 @@ namespace ShoppingOnline
             int pagecount = AspNetPager1.PageCount;
             DataView dv = dt.DefaultView;
             pds.DataSource = dv;
-
+            
             rpt.DataSource = pds;
             rpt.DataBind();
         }
@@ -134,18 +136,18 @@ namespace ShoppingOnline
             if (!quming.Equals("全部"))
             {
                 strsql = "select * from Db_Prodouct where pType = '" + quming + "' order by ID desc";
-                dt = OleDbHelper.GetDataTable(strsql);
+                dt = SqlHelper.ExecDataSet(strsql).Tables[0];
             }
             else if (query == "")
             {
                 strsql = "select * from Db_Prodouct order by ID desc";
-                dt = OleDbHelper.GetDataTable(strsql);
+                dt = SqlHelper.ExecDataSet(strsql).Tables[0];
             }
             else
             {
                 strsql = "select * from Db_Prodouct where pTitle like '*@query*' order by ID desc";
-                OleDbParameter para = new OleDbParameter("@title", query);
-                dt = OleDbHelper.GetDataTable(strsql, para);
+                SqlParameter para = new SqlParameter("@title", query);
+                dt = SqlHelper.ExecDataSet(strsql, para).Tables[0];
             }
 
             GetRptBind(dt);

@@ -40,7 +40,7 @@ namespace ShoppingOnline
                         }
                         else
                         {
-                            Response.Redirect("index.aspx");
+                            Response.Redirect("Index.aspx");
                             return;
                         }
 
@@ -51,14 +51,14 @@ namespace ShoppingOnline
                     }
                     catch
                     {
-                        Response.Redirect("index.aspx");
+                        Response.Redirect("Index.aspx");
                         return;
                     }
 
                 }
                 else
                 {
-                    Response.Redirect("index.aspx");
+                    Response.Redirect("Index.aspx");
                     return;
                 }
             }

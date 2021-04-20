@@ -1,8 +1,5 @@
 ﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="UserLogin.aspx.cs" Inherits="Shopping.UserLogin" %>
-
-
-
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="~/UserLogin.aspx.cs" Inherits="ShoppingOnline.UserLogin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Login</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -36,8 +33,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-3 account-left">
                 </div>
                 <div class="col-md-6 account-left">
-                    <asp:TextBox ID="txtName" runat="server" placeholder="用户名" TabIndex="1" required></asp:TextBox>
-                    <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" placeholder="密码" TabIndex="2" required></asp:TextBox>
+                    <asp:TextBox ID="txtName" runat="server" placeholder="用户名" TabIndex="1" ></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" placeholder="密码" TabIndex="2" ></asp:TextBox>
                     <div class="address submit">
                         <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" />
                     </div>

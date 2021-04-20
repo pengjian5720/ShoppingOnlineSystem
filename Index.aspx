@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="ShoppingOnline.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/MasterPage.master" CodeBehind="Index.aspx.cs" Inherits="ShoppingOnline.Index" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
