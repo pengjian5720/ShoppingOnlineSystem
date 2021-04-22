@@ -53,7 +53,6 @@
                 </div>
             </div>
             <div class="bt">
-
                  <asp:Button ID="btnlogin" runat="server" Text=""  OnClick="btnlogin_Click"/>  
             </div>
         </div>

@@ -28,7 +28,7 @@ namespace ShoppingOnline
                 Response.Write("<script>alert('请填写必要内容！')</script>");
                 return;
             }
-            string selcmdstr = "select * from tb_manager where username=@name";
+            string selcmdstr = "select * from tb_manager where managername=@name";
             SqlParameter[] sqlParameter = new SqlParameter[]
             {
                 new SqlParameter("@name",txtName.Value.ToString())
@@ -37,7 +37,7 @@ namespace ShoppingOnline
             if (dt.Rows.Count > 0)
             {
                 string password = txtPwd.Value.ToString().Trim();
-                if (password == dt.Rows[0]["userpassword"].ToString())
+                if (password == dt.Rows[0]["managerpassword"].ToString())
                 {
                     if (Session["check"] == null)
                         return;

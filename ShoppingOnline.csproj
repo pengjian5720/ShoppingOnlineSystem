@@ -71,14 +71,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\AdminList.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\index.aspx" />
-    <Content Include="Admin\OrderList.aspx" />
-    <Content Include="Admin\OrderList_Fin.aspx" />
-    <Content Include="Admin\Product.aspx" />
-    <Content Include="Admin\TImageList.aspx" />
-    <Content Include="Admin\UserList.aspx" />
     <Content Include="App_Data\Database.mdb" />
     <Content Include="bin\AspNetPager.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -683,13 +677,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AdminList.aspx.cs">
-      <DependentUpon>AdminList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\AdminList.aspx.designer.cs">
-      <DependentUpon>AdminList.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -703,41 +690,6 @@
     </Compile>
     <Compile Include="Admin\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\OrderList.aspx.cs">
-      <DependentUpon>OrderList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\OrderList.aspx.designer.cs">
-      <DependentUpon>OrderList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\OrderList_Fin.aspx.cs">
-      <DependentUpon>OrderList_Fin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\OrderList_Fin.aspx.designer.cs">
-      <DependentUpon>OrderList_Fin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Product.aspx.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Product.aspx.designer.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\TImageList.aspx.cs">
-      <DependentUpon>TImageList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\TImageList.aspx.designer.cs">
-      <DependentUpon>TImageList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\UserList.aspx.cs">
-      <DependentUpon>UserList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\UserList.aspx.designer.cs">
-      <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Code\AjaxSystem.cs" />
     <Compile Include="Code\cAdmin.cs">
