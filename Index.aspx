@@ -28,7 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--start-logo-->
     <div class="logo">
         <a href="index.aspx">
-            <h1>淘奇网</h1>
+            <h1>网上商城</h1>
         </a>
     </div>
     <!--start-logo-->
@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-3 header-right">
                     <div class="search-bar">
-                        <asp:TextBox ID="txtQuery" runat="server" Text="搜索玩意儿"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '搜索玩意儿';}"></asp:TextBox>
+                        <asp:TextBox ID="txtQuery" runat="server" Text="点击搜索"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '点击搜索';}"></asp:TextBox>
                         <asp:Button ID="btnQuery" runat="server" OnClick="btnQuery_Click" />
                     </div>
                 </div>

@@ -1,7 +1,7 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"  CodeFile="~/Check.aspx.cs" Inherits="ShoppingOnline.Check"%>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="~/Order.aspx.cs"  Inherits="ShoppingOnline.Order"%>
+<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>购物车</title>
+    <title>订单</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
     <script src="js/jquery-1.11.0.min.js"></script>
@@ -23,7 +23,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="js/jquery.easydropdown.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <!--start-ckeckout-->
-    <!--end-ckeckout-->
 </asp:Content>
 

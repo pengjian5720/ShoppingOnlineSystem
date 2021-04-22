@@ -37,16 +37,6 @@
                         <table class="style1">
                             <tr>
                                 <td>
-                                    <a href="orders.aspx">
-                                        <div class="total">
-                                            <%--<span class="simpleCart_total"></span>--%>
-                                        </div>
-                                        <img src="images/ic_list.png" alt="" height="18" width="24" />
-                                    </a>
-                                    <p>
-                                        <a href="orders.aspx" class="simpleCart_empty">我的订单</a></p>
-                                </td>
-                                <td>
                                     <a href="check.aspx">
                                         <div class="total">
                                             <%--<span class="simpleCart_total"></span>--%>
@@ -54,9 +44,19 @@
                                         <img src="images/cart-1.png" alt="" />
                                     </a>
                                     <p>
-                                        <a href="check.aspx" class="simpleCart_empty">购物车</a></p>
+                                        <a href="Check.aspx" class="simpleCart_empty">购物车</a></p>
                                     <div class="clearfix">
                                     </div>
+                                </td>
+                                <td>
+                                    <a href="orders.aspx">
+                                        <div class="total">
+                                            <%--<span class="simpleCart_total"></span>--%>
+                                        </div>
+                                        <img src="images/ic_list.png" alt="" height="18" width="24" />
+                                    </a>
+                                    <p>
+                                        <a href="Order.aspx" class="simpleCart_empty">我的订单</a></p>
                                 </td>
                             </tr>
                         </table>

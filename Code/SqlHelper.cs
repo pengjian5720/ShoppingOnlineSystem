@@ -10,7 +10,7 @@ namespace ShoppingOnline.App_Code
 {
     public class SqlHelper
     {
-        private static readonly string connString = ConfigurationManager.ConnectionStrings["SqlLibraryMS"].ConnectionString;
+        private static readonly string connString = ConfigurationManager.ConnectionStrings["SqlOnlineShopMS"].ConnectionString;
         /// <summary>
         /// 执行增删改操作的方法
         /// </summary>

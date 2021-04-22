@@ -21,7 +21,7 @@ namespace ShoppingOnline
                 return;
             }
 
-            string checksql = "select * from Db_User where userName=@username and userpassWord=@password";
+            string checksql = "select * from tb_user where userName=@username and userpassWord=@password";
             SqlParameter[] paras = {
                                     new SqlParameter("@username", txtName.Text),
                                     new SqlParameter("@password",txtPassword.Text)
@@ -29,10 +29,10 @@ namespace ShoppingOnline
             DataTable dt =SqlHelper.ExecDataSet(checksql,paras).Tables[0];
             if (dt.Rows.Count > 0)
             {
-                Session["usname"] = dt.Rows[0]["userName"].ToString();
-                Session["userid"] = dt.Rows[0]["ID"].ToString();
+                Session["usname"] = dt.Rows[0]["username"].ToString();
+                Session["userid"] = dt.Rows[0]["userid"].ToString();
                 Response.Write("<script>alert('登录成功')</script>");
-                Response.Redirect("index.aspx");
+                Response.Redirect("Index.aspx");
             }
             else
             {

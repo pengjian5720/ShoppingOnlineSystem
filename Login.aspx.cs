@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ShoppingOnline.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -26,13 +28,15 @@ namespace ShoppingOnline
                 Response.Write("<script>alert('请填写必要内容！')</script>");
                 return;
             }
-            string selcmdstr = "select * from Db_Admin where username=@name";
-            OleDbParameter para = new OleDbParameter("@name", txtName.Value.Trim().ToString());
-            DataTable dt = OleDbHelper.GetDataTable(selcmdstr, para);
+            string selcmdstr = "select * from tb_manager where username=@name";
+            SqlParameter[] sqlParameter = new SqlParameter[]
+            {
+                new SqlParameter("@name",txtName.Value.ToString())
+            };
+            DataTable dt = SqlHelper.ExecDataSet(selcmdstr, sqlParameter).Tables[0];
             if (dt.Rows.Count > 0)
             {
-                string value = txtPwd.Value.ToString().Trim();
-                string password = CommonHelper.GetMD5(value + CommonHelper.GetPawSalt());
+                string password = txtPwd.Value.ToString().Trim();
                 if (password == dt.Rows[0]["userpassword"].ToString())
                 {
                     if (Session["check"] == null)
@@ -40,7 +44,7 @@ namespace ShoppingOnline
                     if (txtVer.Value.Trim().ToString() == Session["check"].ToString())
                     {
                         Session["username"] = txtName.Value.Trim().ToString();
-                        Session["password"] = CommonHelper.GetMD5(txtPwd.Value.Trim().ToString() + CommonHelper.GetPawSalt());
+                        Session["password"] = txtPwd.Value.Trim().ToString();
                         Response.Redirect("~/Admin/index.aspx");
                     }
                     else
