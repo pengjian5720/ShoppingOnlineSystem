@@ -71,20 +71,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="Admin\AddProduct.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\index.aspx" />
+    <Content Include="Admin\ProdouctList.aspx" />
+    <Content Include="Admin\UpdateProduct.aspx" />
     <Content Include="App_Data\Database.mdb" />
     <Content Include="bin\AspNetPager.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="Change.aspx" />
     <Content Include="Check.aspx" />
-    <Content Include="css\backstage.css" />
+    <Content Include="css\app.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\flexslider.css" />
     <Content Include="css\index.css" />
     <Content Include="css\login.css" />
     <Content Include="css\memenu.css" />
+    <Content Include="css\simple-line-icons.css" />
     <Content Include="css\style.css" />
     <Content Include="easyui\changelog.txt" />
     <Content Include="easyui\easyloader.js" />
@@ -476,6 +481,7 @@
     <Content Include="images\abt-3.jpg" />
     <Content Include="images\arrow.png" />
     <Content Include="images\bg.jpg" />
+    <Content Include="images\bg.png" />
     <Content Include="images\bnr-1.jpg" />
     <Content Include="images\bnr-2.jpg" />
     <Content Include="images\bnr-3.jpg" />
@@ -485,6 +491,7 @@
     <Content Include="images\bnr-7.jpg" />
     <Content Include="images\bnr-8.jpg" />
     <Content Include="images\body.jpg" />
+    <Content Include="images\bodybg.jpg" />
     <Content Include="images\bt.png" />
     <Content Include="images\c-1.jpg" />
     <Content Include="images\c-2.jpg" />
@@ -493,9 +500,18 @@
     <Content Include="images\cart-2.png" />
     <Content Include="images\cart-3.png" />
     <Content Include="images\close.png" />
+    <Content Include="images\collapse-light.png" />
+    <Content Include="images\collapse.png" />
     <Content Include="images\crossword.png" />
+    <Content Include="images\expand-light.png" />
+    <Content Include="images\expand.png" />
+    <Content Include="images\file.png" />
+    <Content Include="images\folder.png" />
+    <Content Include="images\fontawesome-webfont.svg" />
     <Content Include="images\hbt.png" />
+    <Content Include="images\icons.png" />
     <Content Include="images\ic_list.png" />
+    <Content Include="images\image.png" />
     <Content Include="images\number.jpg" />
     <Content Include="images\p-1.png" />
     <Content Include="images\p-2.png" />
@@ -508,12 +524,14 @@
     <Content Include="images\password.jpg" />
     <Content Include="images\pr-1.jpg" />
     <Content Include="images\pr-2.jpg" />
+    <Content Include="images\progress.png" />
     <Content Include="images\s-1.jpg" />
     <Content Include="images\s-2.jpg" />
     <Content Include="images\s-3.jpg" />
     <Content Include="images\s-icons.png" />
     <Content Include="images\search.png" />
     <Content Include="images\star.png" />
+    <Content Include="images\success.png" />
     <Content Include="images\tick.png" />
     <Content Include="images\user.jpg" />
     <Content Include="images\yz.jpg" />
@@ -673,10 +691,23 @@
     <Content Include="Signle.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="UserReg.aspx" />
-    <Content Include="Verification.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -690,6 +721,20 @@
     </Compile>
     <Compile Include="Admin\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProdouctList.aspx.cs">
+      <DependentUpon>ProdouctList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProdouctList.aspx.designer.cs">
+      <DependentUpon>ProdouctList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateProduct.aspx.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateProduct.aspx.designer.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Code\AjaxSystem.cs" />
     <Compile Include="Code\cAdmin.cs">
@@ -781,13 +826,6 @@
     <Compile Include="UserReg.aspx.designer.cs">
       <DependentUpon>UserReg.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Verification.aspx.cs">
-      <DependentUpon>Verification.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Verification.aspx.designer.cs">
-      <DependentUpon>Verification.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="easyui\themes\icons\Thumbs.db" />
@@ -801,6 +839,21 @@
     <Content Include="bin\AspNetPager.dll.refresh">
       <BrowseToURL>~/bin/AspNetPager.dll</BrowseToURL>
     </Content>
+    <Content Include="images\fontawesome-webfont.eot" />
+    <Content Include="images\fontawesome-webfont.ttf" />
+    <Content Include="images\fontawesome-webfont.woff" />
+    <Content Include="images\fontawesome-webfont.woff2" />
+    <Content Include="images\glyphicons-halflings-regular.eot" />
+    <Content Include="images\glyphicons-halflings-regular.svg#glyphicons_halflingsregular" />
+    <Content Include="images\glyphicons-halflings-regular.ttf" />
+    <Content Include="images\glyphicons-halflings-regular.woff" />
+    <Content Include="images\Simple-Line-Icons.eot" />
+    <Content Include="images\Simple-Line-Icons.svg#Simple-Line-Icons" />
+    <Content Include="images\Simple-Line-Icons.ttf" />
+    <Content Include="images\Simple-Line-Icons.woff" />
+    <Content Include="images\sourcesanspro-bold.woff" />
+    <Content Include="images\sourcesanspro-light.woff" />
+    <Content Include="images\sourcesanspro.woff" />
     <None Include="packages.config" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\.signature.p7s" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props" />
