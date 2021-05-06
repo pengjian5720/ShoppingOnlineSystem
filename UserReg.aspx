@@ -42,7 +42,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li>
                             <label class="radio">
                                 <asp:RadioButton ID="rbtnWoman" GroupName="Sex" runat="server"/><i></i>女士</label></li>
-                        <div class="clearfix"></div>
                     </ul>
                 </div>
                 <div class="col-md-6 account-left">

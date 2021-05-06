@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <asp:TextBox ID="txtName" runat="server" placeholder="用户名" TabIndex="1" ></asp:TextBox>
                     <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" placeholder="密码" TabIndex="2" ></asp:TextBox>
                     <div class="address submit">
-                        <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" />
+                        <asp:Button ID="btnLogin" runat="server" Text="登录" CssClass="btn" OnClick="btnLogin_Click" />
                     </div>
                 </div>
                 <div class="col-md-3 account-left">

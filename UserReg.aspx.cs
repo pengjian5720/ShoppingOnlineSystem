@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ShoppingOnline.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -33,8 +35,8 @@ namespace ShoppingOnline
                 return;
             }
 
-            string checksql = "select count(*) from Db_User where userName=@username";
-            int count = OleDbHelper.getCountRows(checksql, new OleDbParameter("@username", txtName.Text));
+            string checksql = "select count(*) from tb_user where nsername=@username";
+            int count =  Convert.ToInt32(SqlHelper.ExecScalar(checksql, new SqlParameter("@username", txtName.Text)));
             if (count >= 1)
             {
                 Response.Write("<script>alert('已存在此用户名，请重新输入用户名！')</script>");
@@ -49,28 +51,28 @@ namespace ShoppingOnline
                     txtSex = "男性";
                 else
                     txtSex = "女性";
-                string sql = "insert into Db_User(userName,userpassWord,userSex,userCreateDate,userEmail,userAddress,userMobile)values(@username,@password,@usersex,@usercreatedate," +
+                string sql = "insert into tb_user(username,userpassword,sex,name,address,telephone)values(@username,@password,@usersex,@usercreatedate," +
                     "@useremail,@useradress,@usermobile)";
-                OleDbParameter[] paras = {
-                                            new OleDbParameter("@username", txtName.Text),
-                                            new OleDbParameter("@password", CommonHelper.GetMD5(txtPassword.Text+CommonHelper.GetPawSalt())),
-                                            new OleDbParameter("@usersex", txtSex),
-                                            new OleDbParameter("@usercreatedate", createDate.ToShortDateString()),
-                                            new OleDbParameter("@useremail",txtEmail.Text),
-                                            new OleDbParameter("@useradress",txtAdress.Text),
-                                            new OleDbParameter("@usermobile",txtMobile.Text)
+                SqlParameter[] paras = {
+                                            new SqlParameter("@username", txtName.Text),
+                                            new SqlParameter("@password", CommonHelper.GetMD5(txtPassword.Text+CommonHelper.GetPawSalt())),
+                                            new SqlParameter("@usersex", txtSex),
+                                            new SqlParameter("@usercreatedate", createDate.ToShortDateString()),
+                                            new SqlParameter("@useremail",txtEmail.Text),
+                                            new SqlParameter("@useradress",txtAdress.Text),
+                                            new SqlParameter("@usermobile",txtMobile.Text)
                                      };
-                int i = OleDbHelper.ExecuteSql(sql, paras);
+                int i = SqlHelper.ExecNonQuery(sql, paras);
                 if (i == 1)
                 {
                     string str = "select * from Db_User where userName=@username";
-                    DataTable dt = OleDbHelper.GetDataTable(str, new OleDbParameter("@username", txtName.Text));
+                    DataTable dt = SqlHelper.ExecDataSet(str, new SqlParameter("@username", txtName.Text)).Tables[0];
                     if (dt.Rows.Count > 0)
                     {
                         Session["usname"] = dt.Rows[0]["userName"].ToString();
                         Session["userid"] = dt.Rows[0]["ID"].ToString();
                     }
-                    Response.Write("<script>alert('注册成功！');window.location='index.aspx';</script>");
+                    Response.Write("<script>alert('注册成功！');window.location='Index.aspx';</script>");
                 }
                 else
                 {

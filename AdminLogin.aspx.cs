@@ -41,7 +41,7 @@ namespace ShoppingOnline
                 {
                     Session["username"] = txtName.Text.Trim().ToString();
                     Session["password"] = txtPasswd.Text.Trim().ToString();
-                    Response.Redirect("~/Admin/index.aspx");
+                    Response.Redirect("~/Admin/Index.aspx");
                 }
                 else
                 {

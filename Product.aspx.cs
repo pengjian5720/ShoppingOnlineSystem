@@ -83,9 +83,10 @@ namespace ShoppingOnline
                     }
                     string strsql;
                     if (!quming.Equals("全部"))
-                        strsql = "select * from Db_Prodouct where pType = '" + quming + "' order by ID desc";
+                        strsql = "select * from tb_goods where sortid =(select sortid from tb_sort WHERE sortname='"+ quming+"') order by goodsid desc";
+                        
                     else
-                        strsql = "select * from Db_Prodouct order by ID desc";
+                        strsql = "select * from tb_goods order by goodsid desc";
 
                     DataTable dt = new DataTable();
                     dt = SqlHelper.ExecDataSet(strsql).Tables[0];
@@ -99,7 +100,7 @@ namespace ShoppingOnline
                     state[1] = "grid";
                     state[2] = "grid";
                     state[3] = "active";
-                    string strquery = "select * from Db_Prodouct where pTitle like '%'+@title+'%' order by ID desc";
+                    string strquery = "select * from tb_goods where goodsname like @title order by goodsid desc";
                     SqlParameter para = new SqlParameter("@title", query);
                     DataTable dt = new DataTable();
                     dt = SqlHelper.ExecDataSet(strquery, para).Tables[0];
@@ -107,7 +108,7 @@ namespace ShoppingOnline
                 }
                 else
                 {
-                    Response.Redirect("index.aspx");
+                    Response.Redirect("Index.aspx");
                     return;
                 }
             }
@@ -135,17 +136,17 @@ namespace ShoppingOnline
             DataTable dt = new DataTable();
             if (!quming.Equals("全部"))
             {
-                strsql = "select * from Db_Prodouct where pType = '" + quming + "' order by ID desc";
+                strsql = "select * from tb_goods where pType = '" + quming + "' order by goodsid desc";
                 dt = SqlHelper.ExecDataSet(strsql).Tables[0];
             }
             else if (query == "")
             {
-                strsql = "select * from Db_Prodouct order by ID desc";
+                strsql = "select * from tb_goods order by goodsid desc";
                 dt = SqlHelper.ExecDataSet(strsql).Tables[0];
             }
             else
             {
-                strsql = "select * from Db_Prodouct where pTitle like '*@query*' order by ID desc";
+                strsql = "select * from tb_goods where pTitle like @title order by goodsid desc";
                 SqlParameter para = new SqlParameter("@title", query);
                 dt = SqlHelper.ExecDataSet(strsql, para).Tables[0];
             }
@@ -154,7 +155,7 @@ namespace ShoppingOnline
         }
         protected void btnQuery_Click(object sender, EventArgs e)
         {
-            Response.Redirect("products.aspx?query=" + txtQuery.Text);
+            Response.Redirect("Product.aspx?query=" + txtQuery.Text);
         }
     }
 }

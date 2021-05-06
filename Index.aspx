@@ -27,7 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <!--start-logo-->
     <div class="logo">
-        <a href="index.aspx">
+        <a href="Index.aspx">
             <h1>网上商城</h1>
         </a>
     </div>
@@ -39,23 +39,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-9 header-left">
                     <div class="top-nav">
                         <ul class="memenu skyblue">
-                            <li class="active"><a href="index.aspx">首页</a></li>
-                            <li class="grid"><a href="products.aspx?item=装饰摆饰">装饰摆饰</a>
+                            <li class="active"><a href="Index.aspx">首页</a></li>
+                            <li class="grid"><a href="Product.aspx?item=装饰摆饰">装饰摆饰</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=厨房餐饮">厨房餐饮</a>
+                            <li class="grid"><a href="Product.aspx?item=厨房餐饮">厨房餐饮</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=办公文具">办公文具</a>
+                            <li class="grid"><a href="Product.aspx?item=办公文具">办公文具</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=玩具娱乐">玩具娱乐</a>
+                            <li class="grid"><a href="Product.aspx?item=玩具娱乐">玩具娱乐</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=智能科技">智能科技</a>
+                            <li class="grid"><a href="Product.aspx?item=智能科技">智能科技</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=全部">全部</a>
+                            <li class="grid"><a href="Product.aspx?item=全部">全部</a>
 
                             </li>
                         </ul>
@@ -78,31 +78,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div id="top" class="callbacks_container">
             <ul class="rslides" id="slider4">
                 <li>
-                <a href="single.aspx?id=58">
+                <a href="Single.aspx?id=10157">
                     <div class="banner">
                     </div>
                 </a>
                 </li>
                 <li>
-                <a href="single.aspx?id=42">
+                <a href="Single.aspx?id=10154">
                     <div class="banner1">
                     </div>
                 </a>
                 </li>
                 <li>
-                <a href="single.aspx?id=44">
+                <a href="Single.aspx?id=10150">
                     <div class="banner2">
                     </div>
                 </a>
                 </li>
                 <li>
-                <a href="single.aspx?id=59">
+                <a href="Single.aspx?id=10153">
                     <div class="banner3">
                     </div>
                 </a>
                 </li>
                 <li>
-                <a href="single.aspx?id=43">
+                <a href="Single.aspx?id=10155">
                     <div class="banner4">
                     </div>
                 </a>
@@ -141,16 +141,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="product-top">
                 <div class="product-one">
-                    <asp:Repeater ID="rptPro" runat="server">
+                    <asp:Repeater ID="rptPro" runat="server" OnItemCommand="rptPro_ItemCommand">
                         <ItemTemplate>
                             <div class="col-md-3 product-left">
                                 <div class="product-main simpleCart_shelfItem">
-                                    <a href='single.aspx?id=<%#Eval("ID") %>' class="mask">
-                                        <img class="img-responsive zoom-img" width="125px" height="200px" src="<%#Eval("pImagePath").ToString().Substring(3) %>" alt="" /></a>
+                                    <a href="Single.aspx?id=<%#Eval("goodsid") %>" class="mask">
+                                        <img class="img-responsive zoom-img" width="125px" height="200px" src="<%#Eval("goodspicture").ToString().Substring(3) %>" alt="" /></a>
                                     <div class="product-bottom">
-                                        <h3><%#Eval("pTitle").ToString().Length>=15?Eval("pTitle").ToString().Substring(0,15):Eval("pTitle").ToString() %></h3>
-                                        <p><%#Eval("pContent").ToString().Length>=15?Eval("pContent").ToString().Substring(0,15):Eval("pContent").ToString() %></p>
-                                        <h4><a class="item_add" href="single.aspx?id=<%#Eval("ID") %>"><i></i></a><span class=" item_price">￥ <%#Eval("pPrice") %></span></h4>
+                                        <h3><%#Eval("goodsname").ToString().Length>=15?Eval("goodsname").ToString().Substring(0,15):Eval("goodsname").ToString() %></h3>
+                                        <p><%#Eval("goodsdescribe").ToString().Length>=15?Eval("goodsdescribe").ToString().Substring(0,15):Eval("goodsdescribe").ToString() %></p>
+                                        <h4><a class="item_add" href="Single.aspx?id=<%#Eval("goodsid") %>"><i></i></a><span class=" item_price">￥ <%#Eval("goodsprice") %></span></h4>
                                     </div>
 
                                 </div>

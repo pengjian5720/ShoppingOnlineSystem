@@ -22,7 +22,7 @@
                 <div class="col-md-6 top-header-left">
                     <div class="drop">
                         <ul>
-                            <li class="label"><a href="index.aspx">首页</a></li>
+                            <li class="label"><a href="Index.aspx">首页</a></li>
                             <li class="label"><a href="<%=btnurl %>">
                                 <%=btn %></a></li>
                             <li class="label"><a href="userReg.aspx">注册</a></li>

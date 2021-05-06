@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"  CodeBehind="~/Signle.aspx.cs" CodeFile="~/Signle.aspx.cs" Inherits="ShoppingOnline.Signle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"  CodeBehind="Single.aspx.cs" CodeFile="~/Single.aspx.cs" Inherits="ShoppingOnline.Signle" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Single</title>
@@ -47,8 +47,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <!--start-logo-->
     <div class="logo">
-        <a href="index.aspx">
-            <h1>淘奇网</h1>
+        <a href="Index.aspx">
+            <h1>网上商城</h1>
         </a>
     </div>
     <!--start-logo-->
@@ -60,23 +60,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-9 header-left">
                     <div class="top-nav">
                         <ul class="memenu skyblue">
-                            <li class="active"><a href="index.aspx">首页</a></li>
-                            <li class="grid"><a href="products.aspx?item=装饰摆饰">装饰摆饰</a>
+                            <li class="active"><a href="Index.aspx">首页</a></li>
+                            <li class="grid"><a href="Product.aspx?item=装饰摆饰">装饰摆饰</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=厨房餐饮">厨房餐饮</a>
+                            <li class="grid"><a href="Product.aspx?item=厨房餐饮">厨房餐饮</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=办公文具">办公文具</a>
+                            <li class="grid"><a href="Product.aspx?item=办公文具">办公文具</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=玩具娱乐">玩具娱乐</a>
+                            <li class="grid"><a href="Product.aspx?item=玩具娱乐">玩具娱乐</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=智能科技">智能科技</a>
+                            <li class="grid"><a href="Product.aspx?item=智能科技">智能科技</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=全部">全部</a>
+                            <li class="grid"><a href="Product.aspx?item=全部">全部</a>
                             </li>
                         </ul>
                     </div>
@@ -84,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-3 header-right">
                     <div class="search-bar">
-                        <asp:TextBox ID="txtQuery" runat="server" Text="搜索玩意儿"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '搜索玩意儿';}"></asp:TextBox>
+                        <asp:TextBox ID="txtQuery" runat="server" Text="点击搜索"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '点击搜索';}"></asp:TextBox>
                         <asp:Button ID="btnQuery" runat="server" OnClick="btnQuery_Click" />
                     </div>
                 </div>
@@ -98,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="breadcrumbs-main">
                 <ol class="breadcrumb">
-                    <li><a href="index.aspx">首页</a></li>
+                    <li><a href="Index.aspx">首页</a></li>
                     <li class="active"><%=w_Title %></li>
                 </ol>
             </div>
@@ -177,18 +177,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="clearfix"></div>
                     </div>
 
-                    <div class="latestproducts">
+                    <div class="latestProduct">
                         <div class="product-one">
-                            <asp:Repeater ID="rptAbout" runat="server">
+                            <asp:Repeater ID="rptAbout" runat="server" OnItemCommand="rptAbout_ItemCommand">
                                 <ItemTemplate>
                                     <div class="col-md-4 product-left p-left">
                                         <div class="product-main simpleCart_shelfItem">
-                                            <a href='single.aspx?id=<%#Eval("ID") %>' class="mask">
-                                                <img class="img-responsive zoom-img" src="<%#Eval("pImagePath").ToString().Substring(3) %>" alt="" /></a>
+                                            <a href='Single.aspx?id=<%#Eval("goodsid") %>' class="mask">
+                                                <img class="img-responsive zoom-img" src="<%#Eval("goodspicture").ToString().Substring(3) %>" alt="" /></a>
                                             <div class="product-bottom">
-                                                <h3><%#Eval("pTitle").ToString().Length>=15?Eval("pTitle").ToString().Substring(0,15):Eval("pTitle").ToString() %></h3>
-                                                <p><%#Eval("pContent").ToString().Length>=20?Eval("pContent").ToString().Substring(0,20):Eval("pContent").ToString() %></p>
-                                                <h4><a class="item_add" href="single.aspx?id=<%#Eval("ID") %>"><i></i></a><span class=" item_price">￥ 329</span></h4>
+                                                <h3><%#Eval("goodsname").ToString().Length>=15?Eval("goodsname").ToString().Substring(0,15):Eval("goodsname").ToString() %></h3>
+                                                <p><%#Eval("goodsdescribe").ToString().Length>=20?Eval("goodsdescribe").ToString().Substring(0,20):Eval("goodsdescribe").ToString() %></p>
+                                                <h4><a class="item_add" href="single.aspx?id=<%#Eval("id") %>"><i></i></a><span class=" item_price">￥ 329</span></h4>
                                             </div>
                                             <div class="srch">
                                                 <span>-50%</span>

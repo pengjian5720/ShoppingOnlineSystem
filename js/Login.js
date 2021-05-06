@@ -40,7 +40,7 @@
                 success: function (data) {
                     if (data == "success") {
                         
-                        window.location.href = "Admin/index.aspx";
+                        window.location.href = "Admin/Index.aspx";
                     } else {
                         alert("登陆失败");
                     }

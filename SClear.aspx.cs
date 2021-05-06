@@ -12,7 +12,7 @@ namespace ShoppingOnline
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect("index.aspx");
+            Response.Redirect("Index.aspx");
         }
     }
 }

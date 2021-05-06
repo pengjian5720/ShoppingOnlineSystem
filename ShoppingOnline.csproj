@@ -621,7 +621,6 @@
     <Content Include="js\simpleCart.min.js" />
     <Content Include="js\timagesList.js" />
     <Content Include="js\UserList.js" />
-    <Content Include="Login.aspx" />
     <Content Include="mp3\appleline.mp3" />
     <Content Include="mp3\dingdong.mp3" />
     <Content Include="mp3\news.mp3" />
@@ -688,7 +687,7 @@
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe" />
     <Content Include="Product.aspx" />
     <Content Include="SClear.aspx" />
-    <Content Include="Signle.aspx" />
+    <Content Include="Single.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="UserReg.aspx" />
     <Content Include="Web.config" />
@@ -745,7 +744,6 @@
     </Compile>
     <Compile Include="Code\CommonHelper.cs" />
     <Compile Include="Code\ImageFree.cs" />
-    <Compile Include="Code\OleDbhelper.cs" />
     <Compile Include="Code\SqlHelper.cs" />
     <Compile Include="Change.aspx.cs">
       <DependentUpon>Change.aspx</DependentUpon>
@@ -767,13 +765,6 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Order.aspx.cs">
@@ -805,12 +796,12 @@
     <Compile Include="SClear.aspx.designer.cs">
       <DependentUpon>SClear.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Signle.aspx.cs">
-      <DependentUpon>Signle.aspx</DependentUpon>
+    <Compile Include="Single.aspx.cs">
+      <DependentUpon>Single.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Signle.aspx.designer.cs">
-      <DependentUpon>Signle.aspx</DependentUpon>
+    <Compile Include="Single.aspx.designer.cs">
+      <DependentUpon>Single.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserLogin.aspx.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>

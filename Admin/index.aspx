@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="~/Admin/index.aspx.cs" Inherits="ShoppingOnline.Admin.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="~/Admin/Index.aspx.cs" Inherits="ShoppingOnline.Admin.index" %>
 
 <!DOCTYPE html>
 

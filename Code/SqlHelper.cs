@@ -97,5 +97,15 @@ namespace ShoppingOnline.App_Code
                 }
             }
         }
+        //public static int GetCount(string sql,params SqlParameter[] sqlParameters) {
+        //    using (SqlConnection conn=new SqlConnection())
+        //    {
+        //        SqlCommand cmd = new SqlCommand();
+        //        PreparedCommand(sql, sqlParameters, conn, cmd);
+                
+        //    }
+        //    return 
+        
+        //}
     }
 }

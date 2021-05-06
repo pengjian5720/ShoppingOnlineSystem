@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingOnline.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -14,15 +15,20 @@ namespace ShoppingOnline
         {
             if (!IsPostBack)
             {
-                string strpro = "select top 8 * from Db_Prodouct order by ID desc";
-                DataTable dt = OleDbHelper.GetDataTable(strpro);
+                string strpro = "select top 8 * from tb_goods order by goodsid desc";
+                DataTable dt = SqlHelper.ExecDataSet(strpro).Tables[0];
                 rptPro.DataSource = dt;
                 rptPro.DataBind();
             }
         }
         protected void btnQuery_Click(object sender, EventArgs e)
         {
-            Response.Redirect("products.aspx?query=" + txtQuery.Text);
+            Response.Redirect("Product.aspx?query=" + txtQuery.Text);
+        }
+
+        protected void rptPro_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
         }
     }
 }

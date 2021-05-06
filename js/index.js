@@ -9,7 +9,7 @@
                 if (flag) {
                     $.ajax({
                         type: 'post',
-                        url: 'index.aspx?action=loginout',
+                        url: 'Index.aspx?action=loginout',
                         success: function(data) {
                             if (data == "success") {
                                 window.location.href = "../Login.aspx";

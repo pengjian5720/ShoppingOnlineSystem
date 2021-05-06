@@ -28,7 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <!--start-logo-->
     <div class="logo">
-        <a href="index.aspx">
+        <a href="Index.aspx">
             <h1>网上商城</h1>
         </a>
     </div>
@@ -40,23 +40,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-9 header-left">
                     <div class="top-nav">
                         <ul class="memenu skyblue">
-                            <li class="grid"><a href="index.aspx">首页</a></li>
-                            <li class="<%=state[0] %>"><a href="products.aspx?item=装饰摆饰">装饰摆饰</a>
+                            <li class="grid"><a href="Index.aspx">首页</a></li>
+                            <li class="<%=state[0] %>"><a href="Product.aspx?item=装饰摆饰">装饰摆饰</a>
 
                             </li>
-                            <li class="<%=state[1] %>"><a href="products.aspx?item=厨房餐饮">厨房餐饮</a>
+                            <li class="<%=state[1] %>"><a href="Product.aspx?item=厨房餐饮">厨房餐饮</a>
 
                             </li>
-                            <li class="<%=state[2] %>"><a href="products.aspx?item=办公文具">办公文具</a>
+                            <li class="<%=state[2] %>"><a href="Product.aspx?item=办公文具">办公文具</a>
 
                             </li>
-                            <li class="<%=state[3] %>"><a href="products.aspx?item=玩具娱乐">玩具娱乐</a>
+                            <li class="<%=state[3] %>"><a href="Product.aspx?item=玩具娱乐">玩具娱乐</a>
 
                             </li>
-                            <li class="<%=state[4] %>"><a href="products.aspx?item=智能科技">智能科技</a>
+                            <li class="<%=state[4] %>"><a href="Product.aspx?item=智能科技">智能科技</a>
 
                             </li>
-                            <li class="grid"><a href="products.aspx?item=全部">全部</a>
+                            <li class="grid"><a href="Product.aspx?item=全部">全部</a>
 
                             </li>
                         </ul>
@@ -79,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="breadcrumbs-main">
                 <ol class="breadcrumb">
-                    <li><a href="index.aspx">首页</a></li>
+                    <li><a href="Index.aspx">首页</a></li>
                     <li class="active"><%=quming %>区</li>
                 </ol>
             </div>
@@ -95,12 +95,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ItemTemplate>
                                 <div class="col-md-3 product-left p-left">
                                     <div class="product-main simpleCart_shelfItem">
-                                        <a href='single.aspx?id=<%#Eval("ID") %>' class="mask">
-                                            <img class="img-responsive zoom-img" src="<%#Eval("pImagePath").ToString().Substring(3) %>" alt="" /></a>
+                                        <a href='Single.aspx?id=<%#Eval("goodsid") %>' class="mask">
+                                            <img class="img-responsive zoom-img" src="<%#Eval("goodspicture").ToString().Substring(3) %>" alt="" /></a>
                                         <div class="product-bottom">
-                                            <h3><%#Eval("pTitle").ToString().Length>=15?Eval("pTitle").ToString().Substring(0,15):Eval("pTitle").ToString() %></h3>
-                                            <p><%#Eval("pContent").ToString().Length>=15?Eval("pContent").ToString().Substring(0,15):Eval("pContent").ToString() %></p>
-                                            <h4><a class="item_add" href="single.aspx?id=<%#Eval("ID") %>"><i></i></a><span class=" item_price">￥ <%#Eval("pPrice") %></span></h4>
+                                            <h3><%#Eval("goodsname").ToString().Length>=15?Eval("goodsname").ToString().Substring(0,15):Eval("goodsname").ToString() %></h3>
+                                            <p><%#Eval("goodsdescribe").ToString().Length>=15?Eval("goodsdescribe").ToString().Substring(0,15):Eval("goodsdescribe").ToString() %></p>
+                                            <h4><a class="item_add" href="Single.aspx?id=<%#Eval("goodsid") %>"><i></i></a><span class=" item_price">￥ <%#Eval("goodsprice") %></span></h4>
                                         </div>
                                         <div class="srch srch1">
                                             <span>-50%</span>
@@ -108,8 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                 </div>
                             </ItemTemplate>
-                        </asp:Repeater>
-                        
+                        </asp:Repeater>                        
                 </div>
                 
                 <div class="clearfix"></div>
