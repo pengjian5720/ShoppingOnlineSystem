@@ -58,6 +58,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li class="grid"><a href="Product.aspx?item=全部">全部</a>
 
                             </li>
+                            <li class="grid"><a href="Product.aspx?item=热门">热门商品</a>
+
+                            </li>
                         </ul>
                     </div>
                     <div class="clearfix"></div>

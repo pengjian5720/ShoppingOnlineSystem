@@ -14,7 +14,7 @@ namespace ShoppingOnline
     public partial class Signle : System.Web.UI.Page
     {
         private static string w_ID = "";
-        private static string u_ID = "", u_Shop = "";
+        private static string u_ID = "";
         public static string w_Path, w_Title, w_Price, w_Type, w_Info, w_Count;
 
         protected void rptAbout_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -87,55 +87,37 @@ namespace ShoppingOnline
             if (Session["userid"] != null)
             {
                 u_ID = Session["userid"].ToString();
-                string strsel = "select * from bt_user where userid=" + u_ID;
-                DataTable dtsel = SqlHelper.ExecDataSet(strsel).Tables[0];
-                if (dtsel.Rows.Count > 0)
-                {
-                    u_Shop = dtsel.Rows[0]["userShopCart"].ToString();
-                }
-                if (u_Shop.Equals(""))
-                {
-                    u_Shop = w_ID + ",1000,";
-                }
-                else
-                {
-                    string[] stru_s = u_Shop.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    int i;
-                    for (i = 0; i < stru_s.Length; i++)
-                    {
-                        if (w_ID == stru_s[i])
-                        {
-                            int count = Convert.ToInt32(stru_s[i + 1]);
-                            count += 1000;
-                            stru_s[i + 1] = count.ToString();
-                            break;
-                        }
-                    }
-                    u_Shop = "";
-                    foreach (string s in stru_s)
-                    {
-                        u_Shop += s + ",";
-                    }
-                    if (i == stru_s.Length)
-                    {
-                        u_Shop += w_ID + "," + "1000" + ",";
-                    }
-                }
-                string strudp = "update Db_User set userShopCart=@shop where ID=@id";
+                string g_ID=Request.QueryString["id"];
+                string strsel = "select * from tb_mastercar where userid=@u_ID and goodsid=@g_ID" ;
                 SqlParameter[] paras = {
-                                         new SqlParameter("@shop",u_Shop),
-                                         new SqlParameter("@id",u_ID)
+                                         new SqlParameter("@u_ID",u_ID),
+                                         new SqlParameter("@g_ID",g_ID)
                                      };
-                int flag = SqlHelper.ExecNonQuery(strudp, paras);
-                if (flag > 0)
+                DataTable dtsel = SqlHelper.ExecDataSet(strsel,paras).Tables[0];
+                if (dtsel.Rows.Count == 0)
                 {
-                    Response.Redirect("Check.aspx");
+                    string strudp = "insert into tb_mastercar(userid,goodsid) values(@u_ID,@g_ID)";
+                    SqlParameter[] paras1 = {
+                                         new SqlParameter("@u_ID",u_ID),
+                                         new SqlParameter("@g_ID",g_ID)
+                                     };
+                    int flag = SqlHelper.ExecNonQuery(strudp, paras1);
+                    if (flag > 0)
+                    {
+                        Response.Redirect("Check.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('添加出错，请重新加入购物车')</script>");
+                        return;
+                    }
                 }
                 else
                 {
-                    Response.Write("<script>alert('添加出错，请重新加入购物车')</script>");
+                    Response.Write("<script>alert('该商品已加入购物车，请点击购物车查看')</script>");
                     return;
                 }
+
             }
             else
             {

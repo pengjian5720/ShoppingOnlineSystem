@@ -33,7 +33,7 @@
             sortable: true,
         },
         {
-            field: 'oUserID',
+            field: 'oCarID',
             title: '订单所属用户',
             width: 100,
             sortable: true,
@@ -79,7 +79,7 @@
                         var datas = data.split(";");
 
                         $("input[name=oNum1]").val(datas[0]);
-                        $("input[name=oUserID1]").val(datas[4]);
+                        $("input[name=oCarID1]").val(datas[4]);
                         $("input[name=oDate1]").val(datas[2]);
 
                         $("#oState1").val(datas[3]);

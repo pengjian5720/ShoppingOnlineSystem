@@ -23,7 +23,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="js/jquery.easydropdown.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <!--start-ckeckout-->
-    <!--end-ckeckout-->
+        <div class="ckeckout">
+        <div class="container">
+            <div class="ckeck-top heading">
+                <h2>购物车</h2>
+            </div>
+            <div class="ckeckout-top">
+                <div class="cart-items">
+                    <h3>总价：<%=sum %></h3>
+
+                    <div class="in-check">
+                        <ul class="unit">
+                            <li><span>商品展示</span></li>
+                            <li><span>商品名</span></li>
+                            <li><span>价钱</span></li>
+                            <li><span>数量</span></li>
+                            <li></li>
+                            <div class="clearfix"></div>
+                        </ul>
+                        <asp:Repeater ID="rptbind" runat="server">
+                            <ItemTemplate>
+                                <ul class="cart-header1">
+                                    <div class="close1">
+                                        <asp:LinkButton ID="btn" runat="server" OnClick="btn_Click" CommandArgument='<%#Eval("goodsid") %>'></asp:LinkButton>
+                                    </div>
+                                    <li class="ring-in"><a href="single.aspx?id=<%#Eval("goodsid") %>">
+                                        <img src="<%#Eval("goodspicture").ToString().Substring(3) %>" class="img-responsive" alt=""></a>
+                                    </li>
+                                    <li><span class="name"><%#Eval("goodsname") %></span></li>
+                                    <li><span class="cost">￥ <%#Eval("goodsprice") %></span></li>
+                                    <li><span>1件</span></li>
+                                    <div class="clearfix"></div>
+                                    <div class="suborders" align="right">
+                                    <asp:LinkButton ID="btnToOrder" runat="server" OnClick="btnToOrder_Click" Text="点击购买" CommandArgument='<%#Eval("goodsid") %>'></asp:LinkButton>
+                                    </div>
+                                </ul>  
+                            </ItemTemplate>
+                        </asp:Repeater>
+                   <div class="clearfix"></div>
+
+                            <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
 

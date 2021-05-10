@@ -14,10 +14,14 @@ namespace ShoppingOnline
         public int num = 0, sum = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                getOrders();
+            }
         }
         private void getOrders()
         {
+
         }
         protected void btnMake_Click(object sender, EventArgs e)
         {          
