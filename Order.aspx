@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="~/Order.aspx.cs"  Inherits="ShoppingOnline.Order"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="~/Order.aspx.cs"   Inherits="ShoppingOnline.Order"%>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>订单</title>
@@ -47,13 +47,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ItemTemplate>
                                 <ul class="cart-header">
                                     <div class="close1">
-                                        <asp:Button ID="btnMake" runat="server" OnClick="btnMake_Click" CommandArgument='<%#Eval("ID") %>' Text='<%#Eval("btnText") %>' />
+                                    <asp:Button ID="btnMake" runat="server" OnClick="btnMake_Click" CommandArgument='<%#Eval("orderid") %>' Text='<%#Eval("btnText") %>' />
                                     </div>
-                                    <li class="nameo"><span class="name"><%#Eval("oNum").ToString() %></span></li>
-                                    <li class="projecto"><span class="project"><%#Eval("oProject") %></span></li>
-                                    <li class="odate"><span class="cost"><%#Eval("oDate","{0:yyyy年MM月dd日}").ToString() %></span></li>
-                                    <li class="costo"><span class="cost"><%#Eval("oPrice") %>元</span></li>
-                                    <li><span class="ostate"><%#Eval("oState") %></span>
+                                    <li class="nameo"><span class="name"><%#Eval("orderid").ToString() %></span></li>
+                                    <li class="projecto"><span class="project"><%#Eval("goodsname") %></span></li>
+                                    <li class="odate"><span class="cost"><%#Eval("ordertime","{0:yyyy年MM月dd日}").ToString() %></span></li>
+                                    <li class="costo"><span class="cost"><%#Eval("ordermoney") %>元</span></li>
+                                    <li><span class="ostate"><%#Eval("orderstates") %></span>
                                         <p></p>
                                     </li>
                                     <div class="clearfix"></div>

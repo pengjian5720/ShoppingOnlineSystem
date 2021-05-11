@@ -33,12 +33,12 @@ namespace ShoppingOnline
             if (flag > 0)
             {
                 getMasterCar();
+                return;
             }
             else
             {
                 getMasterCar();
                 Response.Write("<script>alert('删除出错，请重新加入购物车')</script>");
-                return;
             }
         }
 
@@ -48,7 +48,6 @@ namespace ShoppingOnline
 
             string oNum = "";           //订单号
             string oState = "";         //订单状态
-            string oCarID = "";        //订单所属用户
             string oPrice = "";         //订单总价
 
             u_ID = Session["userid"].ToString();
@@ -58,19 +57,6 @@ namespace ShoppingOnline
             DateTime date = DateTime.Now;
             Random ra = new Random();
             oNum = ra.Next(100).ToString() + ra.Next(100).ToString();
-
-            string sql = "select carid from tb_mastercar WHERE userid= @u_ID and goodsid= @g_ID";
-            SqlParameter[] sqlpara =
-            {
-                new SqlParameter("@u_ID",u_ID),
-                new SqlParameter("@g_ID",g_ID)
-            };
-            SqlDataReader dr = SqlHelper.ExecDataReader(sql, sqlpara);
-            if (dr.Read())
-            {
-                oCarID = dr.GetValue(0).ToString();
-            }
-            dr.Close();
             string sql1 = "select * from tb_goods where goodsid=" + g_ID;
             DataTable dt = SqlHelper.ExecDataSet(sql1).Tables[0];
             int stock = 0;
@@ -81,17 +67,18 @@ namespace ShoppingOnline
                 oPrice = dataRow["goodsprice"].ToString();
                 stock =Convert.ToInt32(dataRow["goodsprice"]);
             }
-            oState = "待发货";
+            oState = "正在配送";
             if (stock > 0)
             {
-                string strAdd = "insert into tb_order(orderid,carid,ordertime,ordermoney,orderstates) values(@orderid,@carid,@ordertime,@ordermoney,@orderstates)";
+                string strAdd = "insert into tb_order(orderid,ordertime,ordermoney,orderstates,userid,goodsid) values(@orderid,@ordertime,@ordermoney,@orderstates,@userid,@goodsid)";
                 SqlParameter[] parasadd = 
                 {
                     new SqlParameter("@orderid",oNum),
-                    new SqlParameter("@carid",oCarID),
                     new SqlParameter("@ordertime",date.ToShortDateString().ToString()),
                     new SqlParameter("@ordermoney",oPrice),
-                    new SqlParameter("@orderstates",oState) 
+                    new SqlParameter("@orderstates",oState),
+                    new SqlParameter("@userid",u_ID),
+                    new SqlParameter("@goodsid",g_ID)
                 };
                 f_add = SqlHelper.ExecNonQuery(strAdd, parasadd);
             }
@@ -113,6 +100,7 @@ namespace ShoppingOnline
                         new SqlParameter("@g_ID",g_ID)
                     };
                     SqlHelper.ExecNonQuery(updateNum,sql3);
+                    getMasterCar();
                     Response.Write("<script>alert('购买成功，请单击“订单”查看详细信息');</script>");
 
                 }

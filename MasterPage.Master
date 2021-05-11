@@ -49,7 +49,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="orders.aspx">
+                                    <a href="Orders.aspx">
                                         <div class="total">
                                             <%--<span class="simpleCart_total"></span>--%>
                                         </div>
