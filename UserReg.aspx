@@ -33,15 +33,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-6 account-left">
                     <asp:TextBox ID="txtName" placeholder="用户名" runat="server" TabIndex="1"></asp:TextBox>
                     <asp:TextBox ID="txtMobile" placeholder="手机" runat="server" TabIndex="4"></asp:TextBox>
-                    <asp:TextBox ID="txtEmail" placeholder="邮箱（选填）" runat="server" TabIndex="5" ></asp:TextBox>
+                    <asp:TextBox ID="txtRealName" placeholder="真实姓名" runat="server" TabIndex="5" ></asp:TextBox>
                     <ul>
                         <li>
                             <label class="radio left">
                                 
-                                <asp:RadioButton ID="rbtnMan" GroupName="Sex" runat="server" Checked="true"/><i></i>男士</label></li>
+                                <asp:RadioButton ID="rbtnMan" GroupName="Sex" runat="server" Checked="true"/><i></i>男</label></li>
                         <li>
                             <label class="radio">
-                                <asp:RadioButton ID="rbtnWoman" GroupName="Sex" runat="server"/><i></i>女士</label></li>
+                                <asp:RadioButton ID="rbtnWoman" GroupName="Sex" runat="server"/><i></i>女</label></li>
                     </ul>
                 </div>
                 <div class="col-md-6 account-left">

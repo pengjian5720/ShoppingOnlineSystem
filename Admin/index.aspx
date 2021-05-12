@@ -27,7 +27,7 @@
         <div class="logout"> 您好， <%:username %>| <a href="#" onclick="obj.loginout();"> 退出</a> </div>
     </div>
     <div data-options="region:'south',title:'footer',noheader:true,split:true" style="height: 35px;line-height: 30px;text-align: center">
-        &Oslash; 2021 Power By Software Center.
+        &Oslash; @彭建 | @刘健 |@曾季洪 | @邹露阳
     </div>
     <div data-options="region:'west',
             title:'导航栏',
@@ -38,13 +38,6 @@
             "
         style="width: 180px; padding: 10px">
         <ul class="easyui-tree" data-options="lines:true">
-            <li><span>分类管理</span>
-                <ul>
-                    <li>
-                        <span><a href="javascript:void(0);"  icon="icon-manager" class="link" url="AdminList.aspx" style="color:#000000">分类列表</a></span>
-                    </li>
-                </ul>
-            </li>
                 <li><span>商品管理</span>
                 <ul>
                     <li>

@@ -56,7 +56,7 @@
                                         <img src="images/ic_list.png" alt="" height="18" width="24" />
                                     </a>
                                     <p>
-                                        <a href="Order.aspx" class="simpleCart_empty">我的订单</a></p>
+                                        <a href="Order.aspx" class="simpleCart_empty">订单</a></p>
                                 </td>
                             </tr>
                         </table>

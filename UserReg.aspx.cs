@@ -35,7 +35,7 @@ namespace ShoppingOnline
                 return;
             }
 
-            string checksql = "select count(*) from tb_user where nsername=@username";
+            string checksql = "select count(*) from tb_user where username=@username";
             int count =  Convert.ToInt32(SqlHelper.ExecScalar(checksql, new SqlParameter("@username", txtName.Text)));
             if (count >= 1)
             {
@@ -48,31 +48,29 @@ namespace ShoppingOnline
                 DateTime createDate = DateTime.Now;
                 string txtSex = "";
                 if (rbtnMan.Checked == true)
-                    txtSex = "男性";
+                    txtSex = "男";
                 else
-                    txtSex = "女性";
-                string sql = "insert into tb_user(username,userpassword,sex,name,address,telephone)values(@username,@password,@usersex,@usercreatedate," +
-                    "@useremail,@useradress,@usermobile)";
+                    txtSex = "女";
+                string sql = "insert into tb_user(username,userpassword,sex,name,address,telephone)values(@username,@password,@usersex,@name,@useradress,@usermobile)";
                 SqlParameter[] paras = {
                                             new SqlParameter("@username", txtName.Text),
-                                            new SqlParameter("@password", CommonHelper.GetMD5(txtPassword.Text+CommonHelper.GetPawSalt())),
+                                            new SqlParameter("@password", txtPassword.Text),
                                             new SqlParameter("@usersex", txtSex),
-                                            new SqlParameter("@usercreatedate", createDate.ToShortDateString()),
-                                            new SqlParameter("@useremail",txtEmail.Text),
+                                            new SqlParameter("@name",txtRealName.Text),
                                             new SqlParameter("@useradress",txtAdress.Text),
                                             new SqlParameter("@usermobile",txtMobile.Text)
                                      };
                 int i = SqlHelper.ExecNonQuery(sql, paras);
                 if (i == 1)
                 {
-                    string str = "select * from Db_User where userName=@username";
+                    string str = "select * from tb_user where username=@username";
                     DataTable dt = SqlHelper.ExecDataSet(str, new SqlParameter("@username", txtName.Text)).Tables[0];
                     if (dt.Rows.Count > 0)
                     {
-                        Session["usname"] = dt.Rows[0]["userName"].ToString();
-                        Session["userid"] = dt.Rows[0]["ID"].ToString();
+                        Session["username"] = dt.Rows[0]["username"].ToString();
+                        Session["userid"] = dt.Rows[0]["userid"].ToString();
                     }
-                    Response.Write("<script>alert('注册成功！');window.location='Index.aspx';</script>");
+                    Response.Write("<script>alert('注册成功！');window.location='UserLogin.aspx';</script>");
                 }
                 else
                 {
@@ -87,7 +85,7 @@ namespace ShoppingOnline
             txtPassword.Text = "";
             txtRePassword.Text = "";
             txtMobile.Text = "";
-            txtEmail.Text = "";
+            txtRealName.Text = "";
             txtAdress.Text = "";
         }
     }
