@@ -691,6 +691,7 @@
     <Content Include="UserLogin.aspx" />
     <Content Include="UserReg.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Menu.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminLogin.aspx.cs">
@@ -742,7 +743,6 @@
     <Compile Include="Code\cMain.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Code\CommonHelper.cs" />
     <Compile Include="Code\ImageFree.cs" />
     <Compile Include="Code\SqlHelper.cs" />
     <Compile Include="Change.aspx.cs">
@@ -816,6 +816,13 @@
     </Compile>
     <Compile Include="UserReg.aspx.designer.cs">
       <DependentUpon>UserReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

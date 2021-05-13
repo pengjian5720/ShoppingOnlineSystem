@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="~/Order.aspx.cs"   Inherits="ShoppingOnline.Order"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"  CodeBehind="~/Order.aspx.cs"   Inherits="ShoppingOnline.Order"%>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>订单</title>
@@ -26,13 +26,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="ckeckout">
         <div class="container">
             <div class="ckeck-top heading">
-                <h2>订单</h2>
+                <h2>我的订单</h2>
             </div>
             <div class="ckeckout-top">
                 <div class="cart-items">
-                    <h3>我的订单</h3>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3></h3>
-
                     <div class="in-check">
                         <ul class="unit">
                             <li id="numorders"><span>订单号</span></li>
@@ -47,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ItemTemplate>
                                 <ul class="cart-header">
                                     <div class="close1">
-                                    <asp:Button ID="btnMake" runat="server" OnClick="btnMake_Click" CommandArgument='<%#Eval("orderid") %>' Text='<%#Eval("btnText") %>' />
+                                    <asp:Button ID="btnMake" runat="server" OnClick="btnMake_Click" BorderStyle="None" Font-Underline="true" CommandArgument='<%#Eval("orderid") %>' Text='<%#Eval("btnText") %>' />
                                     </div>
                                     <li class="nameo"><span class="name"><%#Eval("orderid").ToString() %></span></li>
                                     <li class="projecto"><span class="project"><%#Eval("goodsname") %></span></li>

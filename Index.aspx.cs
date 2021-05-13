@@ -19,6 +19,8 @@ namespace ShoppingOnline
                 DataTable dt = SqlHelper.ExecDataSet(strpro).Tables[0];
                 rptPro.DataSource = dt;
                 rptPro.DataBind();
+
+
             }
         }
         protected void btnQuery_Click(object sender, EventArgs e)

@@ -30,7 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="ckeckout-top">
                 <div class="cart-items">
-                    <h3>总价：<%=sum %></h3>
+                    <h3></h3>
 
                     <div class="in-check">
                         <ul class="unit">

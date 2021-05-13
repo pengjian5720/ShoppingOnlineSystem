@@ -8,9 +8,9 @@ namespace ShoppingOnline
 {
     public partial class Order : System.Web.UI.Page
     {
-        private static string u_ID = "", g_ID="", u_Shop = "", w_ListID = "", w_ID = "";
-        private static string[] w_IDs;
+        private static string u_ID = "";
         public int num = 0, sum = 0;
+        Button btn = new Button();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -32,15 +32,10 @@ namespace ShoppingOnline
                 dt.Columns.Add("btnText", Type.GetType("System.String"));
                 for(int i = 0; i < dt.Rows.Count; i++)
                 {
-                    if (dt.Rows[i]["orderstates"].ToString().Equals("已收货"))
-                    {
-                        dt.Rows[i]["btnText"] = "订单完成";                      
-                    }
-                    else
+                    if (!dt.Rows[i]["orderstates"].ToString().Equals("已收货"))
                     {
                         dt.Rows[i]["btnText"] = "确认收货";
                     }
-
                 }
                 PagedDataSource pds = new PagedDataSource();
                 pds.PageSize = AspNetPager1.PageSize;
@@ -67,6 +62,7 @@ namespace ShoppingOnline
                 int flag = SqlHelper.ExecNonQuery(strsel);
                 if (flag > 0)
                 {
+                    btn.Visible = false;
                     getOrders();
                 }
                 else

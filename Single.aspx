@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"  CodeBehind="Single.aspx.cs" CodeFile="~/Single.aspx.cs" Inherits="ShoppingOnline.Signle" %>
 
+<%@ Register Src="~/Menu.ascx" TagPrefix="uc1" TagName="Menu" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Single</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -59,26 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="header">
                 <div class="col-md-9 header-left">
                     <div class="top-nav">
-                        <ul class="memenu skyblue">
-                            <li class="active"><a href="Index.aspx">首页</a></li>
-                            <li class="grid"><a href="Product.aspx?item=装饰摆饰">装饰摆饰</a>
-
-                            </li>
-                            <li class="grid"><a href="Product.aspx?item=厨房餐饮">厨房餐饮</a>
-
-                            </li>
-                            <li class="grid"><a href="Product.aspx?item=办公文具">办公文具</a>
-
-                            </li>
-                            <li class="grid"><a href="Product.aspx?item=玩具娱乐">玩具娱乐</a>
-
-                            </li>
-                            <li class="grid"><a href="Product.aspx?item=智能科技">智能科技</a>
-
-                            </li>
-                            <li class="grid"><a href="Product.aspx?item=全部">全部</a>
-                            </li>
-                        </ul>
+                        <uc1:Menu runat="server" ID="Menu" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
