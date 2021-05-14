@@ -38,7 +38,14 @@
             "
         style="width: 180px; padding: 10px">
         <ul class="easyui-tree" data-options="lines:true">
-                <li><span>商品管理</span>
+            <li><span>分类管理</span>
+                <ul>
+                    <li>
+                        <span><a href="javascript:void(0);"  icon="icon-user" class="link" url="GoodsSort.aspx" style="color: #000000">商品类型列表</a></span>
+                    </li>
+                </ul>
+            </li>
+            <li><span>商品管理</span>
                 <ul>
                     <li>
                         <span><a href="javascript:void(0);"  icon="icon-user" class="link" url="ProdouctList.aspx" style="color: #000000">商品列表</a></span>
@@ -51,7 +58,7 @@
                         <span><a href="javascript:void(0);"  icon="icon-user" class="link" url="OrdersList.aspx" style="color: #000000">未完成订单</a></span>
                     </li>
                     <li>
-                        <span><a href="javascript:void(0);"  icon="icon-user" class="link" url="OrdersList_Fin.aspx" style="color: #000000">已完成订单</a></span>
+                        <span><a href="javascript:void(0);"  icon="icon-user" class="link" url="OrdersListFin.aspx" style="color: #000000">已完成订单</a></span>
                     </li>
                 </ul>
             </li>
