@@ -52,9 +52,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">分类id：</td>
+                    <td class="auto-style1">分类名称：</td>
                     <td>
-                        <asp:TextBox ID="txtbsortid" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="ddlsortname" runat="server" AutoPostBack="True">
+                        </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
