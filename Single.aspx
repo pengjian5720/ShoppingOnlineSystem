@@ -172,7 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <div class="product-bottom">
                                                 <h3><%#Eval("goodsname").ToString().Length>=15?Eval("goodsname").ToString().Substring(0,15):Eval("goodsname").ToString() %></h3>
                                                 <p><%#Eval("goodsdescribe").ToString().Length>=20?Eval("goodsdescribe").ToString().Substring(0,20):Eval("goodsdescribe").ToString() %></p>
-                                                <h4><a class="item_add" href="single.aspx?id=<%#Eval("id") %>"><i></i></a><span class=" item_price">￥ 329</span></h4>
+                                                <h4><a class="item_add" href="single.aspx?id=<%#Eval("goodsid") %>"><i></i></a><span class=" item_price">￥ 329</span></h4>
                                             </div>
                                             <div class="srch">
                                                 <span>-50%</span>
@@ -190,7 +190,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="clearfix"></div>
         </div>
-    </div>
     </div>
 	<!--end-single-->
 </asp:Content>

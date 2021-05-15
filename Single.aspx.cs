@@ -35,14 +35,14 @@ namespace ShoppingOnline
                     {
                         int p = Convert.ToInt32(w_ID);
 
-                        strsql = "select * from tb_goods where goodsid=" + w_ID;
+                        strsql = "select * from goodsDisplay where goodsid=" + w_ID;
                         DataTable dt = SqlHelper.ExecDataSet(strsql).Tables[0];
                         if (dt.Rows.Count > 0)
                         {
                             w_Path = dt.Rows[0]["goodspicture"].ToString().Substring(3);
                             w_Title = dt.Rows[0]["goodsname"].ToString();
                             w_Price = dt.Rows[0]["goodsprice"].ToString();
-                            w_Type = dt.Rows[0]["sortid"].ToString();
+                            w_Type = dt.Rows[0]["sortname"].ToString();
                             w_Info = dt.Rows[0]["goodsdescribe"].ToString();
                             w_Count = dt.Rows[0]["goodsstock"].ToString();
                         }
@@ -52,7 +52,7 @@ namespace ShoppingOnline
                             return;
                         }
 
-                        string strrpt = "select top 3 * from tb_goods where sortid=(select sortid from tb_sort WHERE sortname='" + w_Type + "') and goodsid=" + w_ID;
+                        string strrpt = "select top 3 * from tb_goods where sortid=(select sortid from tb_sort WHERE sortname='" + w_Type + "')";
                         DataTable dtrpt = SqlHelper.ExecDataSet(strrpt).Tables[0];
                         rptAbout.DataSource = dtrpt;
                         rptAbout.DataBind();

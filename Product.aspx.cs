@@ -10,7 +10,6 @@ namespace ShoppingOnline
     {
         public static string quming = "装饰摆饰";
         public static string query = "";
-        public static string[] state = new string[6];
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -18,64 +17,6 @@ namespace ShoppingOnline
                 if (Request.QueryString["item"] != null)
                 {
                     quming = Request.QueryString["item"].ToString();
-
-                    switch (quming)
-                    {
-                        case "装饰摆饰":
-                            state[0] = "active";
-                            state[1] = "grid";
-                            state[2] = "grid";
-                            state[3] = "grid";
-                            state[4] = "grid";
-                            state[5] = "grid";
-                            break;
-                        case "厨房餐饮":
-                            state[0] = "grid";
-                            state[1] = "active";
-                            state[2] = "grid";
-                            state[3] = "grid";
-                            state[4] = "grid";
-                            state[5] = "grid";
-                            break;
-                        case "办公文具":
-                            state[0] = "grid";
-                            state[1] = "grid";
-                            state[2] = "active";
-                            state[3] = "grid";
-                            state[4] = "grid";
-                            state[5] = "grid";
-                            break;
-                        case "玩具娱乐":
-                            state[0] = "grid";
-                            state[1] = "grid";
-                            state[2] = "grid";
-                            state[3] = "active";
-                            state[4] = "grid";
-                            state[5] = "grid";
-                            break;
-                        case "智能科技":
-                            state[0] = "grid";
-                            state[1] = "grid";
-                            state[2] = "grid";
-                            state[3] = "grid";
-                            state[4] = "active";
-                            state[5] = "grid";
-                            break;
-                        case "全部":
-                            state[0] = "grid";
-                            state[1] = "grid";
-                            state[2] = "grid";
-                            state[3] = "grid";
-                            state[4] = "grid";
-                            state[5] = "active";
-                            break;
-                        default:
-                            state[0] = "grid";
-                            state[1] = "grid";
-                            state[2] = "grid";
-                            state[3] = "active";
-                            break;
-                    }
                     string strsql;
                     if (!quming.Equals("全部"))
                         strsql = "select * from tb_goods where sortid =(select sortid from tb_sort WHERE sortname='"+ quming+"') order by goodsid desc";
@@ -91,14 +32,9 @@ namespace ShoppingOnline
                 {
                     query = Request.QueryString["query"].ToString();
                     quming = "全部";
-                    state[0] = "grid";
-                    state[1] = "grid";
-                    state[2] = "grid";
-                    state[3] = "active";
-                    string strquery = "select * from tb_goods where goodsname like @title order by goodsid desc";
-                    SqlParameter para = new SqlParameter("@title", query);
+                    string strquery = "select * from tb_goods where goodsname like  '%" + query+ "%' order by goodsid desc";
                     DataTable dt = new DataTable();
-                    dt = SqlHelper.ExecDataSet(strquery, para).Tables[0];
+                    dt = SqlHelper.ExecDataSet(strquery).Tables[0];
                     GetRptBind(dt);
                 }
                 else
