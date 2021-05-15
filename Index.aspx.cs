@@ -15,7 +15,7 @@ namespace ShoppingOnline
         {
             if (!IsPostBack)
             {
-                string strpro = "select top 8 * from tb_goods order by goodsid desc";
+                string strpro = "select top 4 * from tb_goods order by goodsid desc";
                 DataTable dt = SqlHelper.ExecDataSet(strpro).Tables[0];
                 rptPro.DataSource = dt;
                 rptPro.DataBind();
