@@ -138,16 +138,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <h5 class="item_price">￥ <%=w_Price %></h5>
                                 <p><%=w_Info %></p>
                                 <div class="available">
-                                    <!--<ul>
-                                    <li class="size-in"></li>
-                                        <li class="size-in">尺寸<select>
-                                            <option>特大</option>
-                                            <option>大</option>
-                                            <option selected="selected">中</option>
-                                            <option>小</option>
-                                        </select></li>
-                                        <div class="clearfix"></div>
-                                    </ul>-->
                                 </div>
                                 <ul class="tag-men">
                                     <li><span>分类</span>
@@ -163,7 +153,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     <div class="latestProduct">
                         <div class="product-one">
-                            <asp:Repeater ID="rptAbout" runat="server" OnItemCommand="rptAbout_ItemCommand">
+                            <asp:Repeater ID="rptAbout" runat="server" >
                                 <ItemTemplate>
                                     <div class="col-md-4 product-left p-left">
                                         <div class="product-main simpleCart_shelfItem">

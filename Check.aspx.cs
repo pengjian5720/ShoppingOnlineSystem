@@ -10,7 +10,6 @@ namespace ShoppingOnline
     public partial class Check : System.Web.UI.Page
     {
         private static string u_ID = "", g_ID = "";
-        public static int sum = 0,num=0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -117,7 +116,7 @@ namespace ShoppingOnline
             {
                 StringBuilder listString = new StringBuilder();
                 u_ID = Session["userid"].ToString();
-                string struser = "select tb_goods.goodsid,goodsname,goodspicture,goodsprice from tb_mastercar left join tb_goods on tb_mastercar.userid=@u_ID and tb_mastercar.goodsid = tb_goods.goodsid";
+                string struser = "select goodsid,goodsname,goodspicture,goodsprice from mastercarList where userid=@u_ID";
                 SqlParameter[] paras = 
                 {
                     new SqlParameter("@u_ID",u_ID),
@@ -127,10 +126,6 @@ namespace ShoppingOnline
                 {
                     rptbind.DataSource = dataTable;
                     rptbind.DataBind();
-                }
-                foreach(DataRow dataRow in dataTable.Rows)
-                {
-                    sum += Convert.ToInt32(dataRow["goodsprice"]);
                 }
             }
             else

@@ -46,18 +46,8 @@ namespace ShoppingOnline
         }
 
         private void GetRptBind(DataTable dt)
-        {
-
-            PagedDataSource pds = new PagedDataSource();
-            pds.PageSize = AspNetPager1.PageSize;
-            pds.AllowPaging = true;
-            pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
-            AspNetPager1.RecordCount = dt.Rows.Count;
-            int pagecount = AspNetPager1.PageCount;
-            DataView dv = dt.DefaultView;
-            pds.DataSource = dv;
-            
-            rpt.DataSource = pds;
+        {         
+            rpt.DataSource = dt;
             rpt.DataBind();
         }
 

@@ -128,12 +128,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ItemTemplate>
                             <div class="col-md-3 product-left">
                                 <div class="product-main simpleCart_shelfItem">
-                                    <a href="Single.aspx?id=<%#Eval("goodsid") %>" class="mask">
+                                    <a href="Single.aspx?id=<%#Eval("goodsid").ToString() %>" class="mask">
                                         <img class="img-responsive zoom-img" width="125px" height="200px" src="<%#Eval("goodspicture").ToString().Substring(3) %>" alt="" /></a>
                                     <div class="product-bottom">
                                         <h3><%#Eval("goodsname").ToString().Length>=15?Eval("goodsname").ToString().Substring(0,15):Eval("goodsname").ToString() %></h3>
                                         <p><%#Eval("goodsdescribe").ToString().Length>=15?Eval("goodsdescribe").ToString().Substring(0,15):Eval("goodsdescribe").ToString() %></p>
-                                        <h4><a class="item_add" href="Single.aspx?id=<%#Eval("goodsid") %>"><i></i></a><span class=" item_price">￥ <%#Eval("goodsprice") %></span></h4>
+                                        <h4><a class="item_add" href="Single.aspx?id=<%#Eval("goodsid").ToString() %>"><i></i></a><span class=" item_price">￥ <%#Eval("goodsprice") %></span></h4>
                                     </div>
 
                                 </div>

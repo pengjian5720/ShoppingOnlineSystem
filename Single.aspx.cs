@@ -16,12 +16,6 @@ namespace ShoppingOnline
         private static string w_ID = "";
         private static string u_ID = "";
         public static string w_Path, w_Title, w_Price, w_Type, w_Info, w_Count;
-
-        protected void rptAbout_ItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -52,7 +46,7 @@ namespace ShoppingOnline
                             return;
                         }
 
-                        string strrpt = "select top 3 * from tb_goods where sortid=(select sortid from tb_sort WHERE sortname='" + w_Type + "')";
+                        string strrpt = "select top 3 * from goodsDisplay WHERE sortname='" + w_Type + "'";
                         DataTable dtrpt = SqlHelper.ExecDataSet(strrpt).Tables[0];
                         rptAbout.DataSource = dtrpt;
                         rptAbout.DataBind();

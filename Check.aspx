@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <asp:LinkButton ID="btn" runat="server" OnClick="btn_Click" CommandArgument='<%#Eval("goodsid") %>'></asp:LinkButton>
                                     </div>
                                     <li class="ring-in"><a href="single.aspx?id=<%#Eval("goodsid") %>">
-                                        <img src="<%#Eval("goodspicture").ToString().Substring(3) %>" class="img-responsive" alt=""></a>
+                                        <img src="<%#Eval("goodspicture").ToString() %>" class="img-responsive" alt=""></a>
                                     </li>
                                     <li><span class="name"><%#Eval("goodsname") %></span></li>
                                     <li><span class="cost">￥ <%#Eval("goodsprice") %></span></li>

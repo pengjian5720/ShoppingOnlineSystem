@@ -8,7 +8,7 @@ namespace ShoppingOnline
 {
     public partial class Order : System.Web.UI.Page
     {
-        private static string u_ID = "";
+        private static string u_Name = "";
         public int num = 0, sum = 0;
         Button btn = new Button();
         protected void Page_Load(object sender, EventArgs e)
@@ -20,13 +20,13 @@ namespace ShoppingOnline
         }
         private void getOrders()
         {
-            if (Session["userid"] != null)
+            if (Session["usname"] != null)
             {
-                u_ID = Session["userid"].ToString();
-                string sql = "select orderid,goodsname,ordertime,ordermoney,orderstates,tb_order.goodsid from tb_order left join tb_goods on (userid=@userid and tb_order.goodsid=tb_goods.goodsid)";
+                u_Name = Session["usname"].ToString();
+                string sql = "select orderid,goodsname,ordertime,ordermoney,orderstates from orderList where username=@username order by orderstates desc";
                 SqlParameter[] sqlParameter =
                 {
-                    new SqlParameter("@userid",u_ID)
+                    new SqlParameter("@username",u_Name)
                 };
                 DataTable dt = SqlHelper.ExecDataSet(sql,sqlParameter).Tables[0];
                 dt.Columns.Add("btnText", Type.GetType("System.String"));
@@ -37,14 +37,6 @@ namespace ShoppingOnline
                         dt.Rows[i]["btnText"] = "确认收货";
                     }
                 }
-                PagedDataSource pds = new PagedDataSource();
-                pds.PageSize = AspNetPager1.PageSize;
-                pds.AllowPaging = true;
-                pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
-                AspNetPager1.RecordCount = dt.Rows.Count;
-                int pagecount = AspNetPager1.PageCount;
-                DataView dv = dt.DefaultView;
-                pds.DataSource = dv;
                 rptbind.DataSource=dt;
                 rptbind.DataBind();                
             }

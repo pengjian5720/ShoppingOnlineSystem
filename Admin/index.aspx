@@ -27,7 +27,7 @@
         <div class="logout"> 您好， <%:username %>| <a href="#" onclick="obj.loginout();"> 退出</a> </div>
     </div>
     <div data-options="region:'south',title:'footer',noheader:true,split:true" style="height: 35px;line-height: 30px;text-align: center">
-        &Oslash; @彭建 | @刘健 |@曾季洪 | @邹露阳
+        @2021/5/17
     </div>
     <div data-options="region:'west',
             title:'导航栏',

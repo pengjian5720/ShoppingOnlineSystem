@@ -59,11 +59,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </asp:Repeater>
                     </div>
                 </div>
-                
-                <webdiyer:AspNetPager ID="AspNetPager1" runat="server" AlwaysShow="True" CssClass="pages"
-                    PageSize="8" CurrentPageButtonClass="cpb" OnPageChanged="AspNetPager1_PageChanged"
-                    FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PrevPageText="上一页" ShowNavigationToolTip="True">
-                </webdiyer:AspNetPager>
             </div>
         </div>
     </div>
