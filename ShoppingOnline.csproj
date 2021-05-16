@@ -84,7 +84,6 @@
     <Content Include="bin\AspNetPager.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="Change.aspx" />
     <Content Include="Check.aspx" />
     <Content Include="css\app.css" />
     <Content Include="css\bootstrap.css" />
@@ -773,13 +772,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Code\SqlHelper.cs" />
-    <Compile Include="Change.aspx.cs">
-      <DependentUpon>Change.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Change.aspx.designer.cs">
-      <DependentUpon>Change.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Check.aspx.cs">
       <DependentUpon>Check.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"    CodeBehind="~/Product.aspx.cs" Inherits="ShoppingOnline.Product" %>
 
-<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <%@ Register Src="~/Menu.ascx" TagPrefix="uc1" TagName="Menu" %>
 
 

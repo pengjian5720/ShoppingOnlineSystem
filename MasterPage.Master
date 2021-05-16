@@ -38,7 +38,7 @@
                         <table class="style1">
                             <tr>
                                 <td>
-                                    <a href="check.aspx">
+                                    <a href="Check.aspx">
                                         <div class="total">
                                             <%--<span class="simpleCart_total"></span>--%>
                                         </div>
@@ -50,9 +50,8 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="Orders.aspx">
+                                    <a href="Order.aspx">
                                         <div class="total">
-                                            <%--<span class="simpleCart_total"></span>--%>
                                         </div>
                                         <img src="images/ic_list.png" alt="" height="18" width="24" />
                                     </a>
