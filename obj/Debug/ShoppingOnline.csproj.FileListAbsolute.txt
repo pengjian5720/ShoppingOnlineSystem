@@ -52,7 +52,6 @@ E:\ASP.NETproject\ShoppingOnline\bin\roslyn\vbc.exe.config
 E:\ASP.NETproject\ShoppingOnline\bin\roslyn\vbc.rsp
 E:\ASP.NETproject\ShoppingOnline\bin\roslyn\VBCSCompiler.exe
 E:\ASP.NETproject\ShoppingOnline\bin\roslyn\VBCSCompiler.exe.config
-E:\ASP.NETproject\ShoppingOnline\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\ASP.NETproject\ShoppingOnline\obj\Debug\ShoppingOnline.csproj.CopyComplete
 E:\ASP.NETproject\ShoppingOnline\obj\Debug\ShoppingOnline.dll
 E:\ASP.NETproject\ShoppingOnline\obj\Debug\ShoppingOnline.pdb

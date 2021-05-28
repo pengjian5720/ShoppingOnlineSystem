@@ -81,6 +81,10 @@
     <Content Include="Admin\OrdersList.aspx" />
     <Content Include="Admin\ProdouctList.aspx" />
     <Content Include="Admin\UpdateProduct.aspx" />
+    <Content Include="App_Data\onlineShop.mdf" />
+    <Content Include="App_Data\onlineShop_log.ldf">
+      <DependentUpon>onlineShop.mdf</DependentUpon>
+    </Content>
     <Content Include="bin\AspNetPager.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
